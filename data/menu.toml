@@ -1,0 +1,13 @@
+[[entries]]
+title = "所有文章"
+
+  [entries.post_list]
+  limit = 10
+  show_more = true
+  show_more_text = "查看更多..."
+  show_more_url = "posts"
+  title = "所有文章"
+
+[[entries]]
+title = "RSS"
+url = "index.xml"

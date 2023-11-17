@@ -1,0 +1,8 @@
+baseURL = 'https://zhangjian10.github.io/'
+languageCode = 'zh-cn'
+title = '博客'
+theme = 'nostyleplease'
+
+[params]
+  [params.theme_config]
+    back_home_text = "首页"
