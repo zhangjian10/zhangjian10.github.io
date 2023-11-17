@@ -6,3 +6,7 @@ theme = 'nostyleplease'
 [params]
   [params.theme_config]
     back_home_text = "首页"
+
+[services]
+  [services.googleAnalytics]
+    ID = 'G-F42FK67S0N'
