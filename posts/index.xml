@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 博客</title><link>https://zhangjian10.github.io/posts/</link><description>Recent content in Posts on 博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zhangjian10.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Nocalhost VSCode 插件调试 k8s 服务</title><link>https://zhangjian10.github.io/posts/nocalhost-vscode-debug/</link><pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate><guid>https://zhangjian10.github.io/posts/nocalhost-vscode-debug/</guid><description>Nocalhost 目前支持 Jetbrains 全系列插件的一键调试。随着 Nocalhost v0.6.9 发布，VSCode 一键调试已支持 Go、Python、Node.js、Java、Ruby、PHP 。
+传统调试 远程调试（Remote Debug）一直都是排查问题的重要手段，但在 k8s 环境里调试服务并不是一件简单的事情。传统调试服务都需要以下步骤：
+修改镜像（用 Debug 调试器启动的开发镜像）。 kubectl port-forward 转发调试端口到本地。 配置 IDE 连接到调试端口。 调试过程中，每次代码修改到反馈大致需要5分钟（CI/CD)， 调试相对麻烦、编码循环反馈慢、体验不佳。
+Nocalhost 调试 使用 Nocalhost 只需简单配置，即可一键启动 Debug ，代码实时同步远端容器，做到秒级编码反馈，大幅提升云原生行业开发效率。
+原理 当我们使用 Nocalhost 调试时，VSCode 插件会首先进入 DevMode模式，执行以下操作：
+将工作负载的副本数缩减为1。为了在通过Service访问时只访问我们正在开发的应用程序，我们需要缩减副本数为1。
+替换容器的镜像为开发镜像。
+增加一个 sidecar 容器。在我们编辑的代码时希望更改的代码能快速更新到工作负载中，于是我们增加了 sidecar 来实现代码的同步。
+在进入 DevMode 后，插件会执行以下操作：
+在工作负载中执行 debug 命令，启动应用及调试器。 自动将远程调试端口转发至本地随机端口。 通过调试协议连接调试端口检测调试器是否就绪。 等待调试器就绪后，插件会自动连接调试端口开始调试。 当使用Nocalhost 开发镜像时 VSCode 插件会自动识别开发语言，启动对应的调试器进行调试。
+如果我们自定义了开发镜像，启动Remote Debug时需根据提示选择对应的开发语言。
+使用步骤 前置准备 准备一个可用的 Kubernetes 集群 VSCode 1.58+ 安装 Nocalhost VSCode 插件 配置 在调试之前，我们点击需要调试的工作负载右边的 ⚙️ ，进行Debug配置。</description></item><item><title>Vim</title><link>https://zhangjian10.github.io/posts/vim/</link><pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate><guid>https://zhangjian10.github.io/posts/vim/</guid><description>简介 vim 是一款强大、高度可定制的文本编辑工具。
+工作模式 vim 支持多种工作模式：
+普通模式 插入模式 &amp;lsquo;i&amp;rsquo; 光标插入 &amp;lsquo;a&amp;rsquo; 光标后插入 &amp;lsquo;o&amp;rsquo; 换行插入 命令航模式 可视化模式 &amp;lsquo;v&amp;rsquo; 字符 &amp;lsquo;V&amp;rsquo; 行 &amp;lsquo;ctrl&amp;rsquo; + &amp;lsquo;v&amp;rsquo; 块 替换模式 (R) 各个模式按 &amp;rsquo;esc&amp;rsquo; 切换为普通模式。
+基本操作 光标移动 可视化模式下复制文本块 首先进入 visual 模式：v 移动光标选择文本 复制与粘贴的操作 插件 Google：vimium 快捷键:
+shift + ? 帮助说明 f 快捷链接打开页面 F 快捷键打开新页面 gt 下一个标签 gT 上一个标签 H 后退 L 前进 Sublime text 在菜单栏中： Preferences -&amp;gt; Setting - User ，即可打开配置文件进行编辑，将 ignored_packages 项的[]里面内容清空：
+{ &amp;#34;ignored_packages&amp;#34;:[] } vscode：vscodevim idea: ideavim 参考 vim 简介和安装</description></item></channel></rss>
