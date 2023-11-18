@@ -1,0 +1,24 @@
+[categories]
+other = "类别:"
+
+[readingTime]
+one = "一分钟阅读"
+other = "{{.Count}} 分钟阅读"
+
+[readMore]
+other = "更多…"
+
+[draft]
+other = "草稿"
+
+[subscribe]
+other = "RSS"
+
+[rendered]
+other = "Rendered by"
+
+[comments]
+other = "Add/View Comments"
+
+[modifiedOn]
+other = "修改与"
