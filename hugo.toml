@@ -1,19 +1,7 @@
 baseURL = 'https://zhangjian10.github.io/'
 languageCode = 'zh-cn'
 title = '博客'
-theme = 'kiera'
-
-copyright = "Copyright &copy; 2023"
-canonifyurls = true
-GoogleAnalytics = "G-F42FK67S0N"
-
-paginate = 3
-
-summaryLength = 30
-enableEmoji = true
-pygmentsCodeFences = true
-
-defaultContentLanguage = "zh-cn"
+theme = 'nostyleplease'
 
 [params]
 thumbnail = true
@@ -21,6 +9,6 @@ paginate = 10
   [params.theme_config]
     back_home_text = "首页"
 
-[author]
-    name = "zhangjian10"
-    github = "zhangjian10"
+[services]
+  [services.googleAnalytics]
+    ID = 'G-F42FK67S0N'
