@@ -66,6 +66,8 @@ li { margin: 0.4rem 0; }
 *:target { background: yellow; }
 
 .w {
+  box-sizing: border-box;
+  min-height: calc(100vh - 50px);
   max-width: 640px;
   margin: 0 auto;
   padding: 4rem 2rem;
@@ -127,4 +129,9 @@ img {
 figcaption {
   text-align: center;
   opacity: 0.5;
+}
+
+footer{
+  text-align: center;
+  padding: 10px 0;
 }
